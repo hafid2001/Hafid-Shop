@@ -1,11 +1,5 @@
-
-
 const Features = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default Features
+export default Features;

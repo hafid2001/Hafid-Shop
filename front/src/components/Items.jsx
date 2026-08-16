@@ -1,11 +1,5 @@
-
-
 const Items = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default Items
+export default Items;

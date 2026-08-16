@@ -1,11 +1,5 @@
-
-
 const Menuitems = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default Menuitems
+export default Menuitems;
