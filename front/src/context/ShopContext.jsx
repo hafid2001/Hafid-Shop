@@ -1,12 +1,16 @@
-import React, { Children, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react';
 
-const ShopContext = ({children}) => {
-    const [token,setToken] = useState(true);
-    const [allProducts]=useState(allProducts);
+import {all_products} from "../assets/data";
+export const ShopContext = createContext();
+
+  const  ShopContextProvider = ({children}) => {
+    const [cartItems,setCartItems]=useState({});
+    const [allProducts]=useState(all_products);
     const [token,setToken] = useState("");
 
+  
     useEffect(()=>{
-    const sevedCart = localStorage.getItem("cartItems")
+    const savedCart = localStorage.getItem("cartItems")
     if(savedCart){
         setCartItems(JSON.parse(savedCart))
     }
@@ -14,7 +18,7 @@ const ShopContext = ({children}) => {
 },[])
 
 useEffect(()=>{
-    localStorage.setItem({cartItems},JSON.stringify(cartItems))
+    localStorage.setItem("cartItems",JSON.stringify(cartItems))
 
 },[cartItems])
 
@@ -29,7 +33,7 @@ const removeFromCart = (id,removeAll = false )=>{
 setCartItems((prev)=>{
     const updated ={... prev}
     if(removeAll || updated[id] === 1)delete updated[id]
-    else updated[id]
+    else updated[id]--;
     return updated
 })
 
@@ -37,9 +41,9 @@ setCartItems((prev)=>{
 };
 
 
-const getTotalCartAmont = ()=>{
+const getTotalCartAmount = ()=>{
     return Object.entries(cartItems).reduce((total,[id,qty])=>{
-        const product = allProducts.find((p) p._id === id)
+        const product = allProducts.find((p) => p._id === id)
         return total + (product ? product.price * qty : 0)
     },0)
 }
@@ -55,7 +59,7 @@ const value = {
     cartItems,
     addToCart,
     removeFromCart,
-    getTotalCartAmont,
+    getTotalCartAmount,
     token,
     setToken
 }
@@ -65,8 +69,9 @@ const value = {
 }
 
 
+export default ShopContextProvider;
 
 
-export default ShopContext
+
 
 

@@ -8,9 +8,11 @@ import {
   Flashlight,
 } from "lucide-react";
 
+import {ShopContext} from "../context/ShopContext"
+
 import { useNavigate , useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 
 export const menuItemsData = [
@@ -23,12 +25,7 @@ export const menuItemsData = [
 const Menuitems = ({ setSideBarOpen, isMobile }) => {
   
  const navigate = useNavigate();
-  const [cartItems] = useState({
-    item1: 2,
-    item2: 1,
-  });
-
-  const [token, setToken] = useState(true);
+const {cartItems,token} = useContext(ShopContext);
   const location = useLocation();
 
   const totalItems = Object.values(cartItems).reduce(

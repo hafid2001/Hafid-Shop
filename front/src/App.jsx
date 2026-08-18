@@ -15,12 +15,12 @@ import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
 import MyOreders from "./pages/MyOrders.jsx";
 import Verify from "./pages/Verify.jsx";
-
+import ShopContextProvider from "./context/ShopContext.jsx";
 
 
 const App = () => {
   return (
-    <div>
+    <ShopContextProvider>
      <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -35,7 +35,7 @@ const App = () => {
 
 
       </Routes>
-    </div>
+    </ShopContextProvider>
   );
 };
 
