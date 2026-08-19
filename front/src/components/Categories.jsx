@@ -81,7 +81,7 @@ const Categories = () => {
                     onClick={() => addToCart(product._id)}
                     className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition-all text-white shadow-lg"
                   >
-                    <ShoppingBag className="w-5 h-5" />
+                    <ShoppingBag className="w-5 h-5" />Add
                   </button>
                 </div>
               </div>
