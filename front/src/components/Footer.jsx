@@ -49,7 +49,7 @@ const Footer = () => {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
   <div className="space-y-8">
     <div
-      className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-6
+      className="flex  items-center gap-4 bg-white/10 backdrop-blur-md p-6
       rounded-3xl shadow-lg hover:shadow-cyan-400/30 transition-all"
     >
       <MapPin className="w-8 h-8 text-cyan-400" />
@@ -60,7 +60,7 @@ const Footer = () => {
           123 شارع التخيل، مدينة المستقبل
         </p>
       </div>
-    </div>
+    
 <div
   className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-6
   rounded-3xl shadow-lg hover:shadow-cyan-400/30 transition-all"
@@ -82,6 +82,7 @@ const Footer = () => {
   <div>
     <h4 className="font-semibold text-lg">البريد الإلكتروني</h4>
     <p className="text-gray-300">support@ecommerce.com</p>
+  </div>
   </div>
 </div>
   
