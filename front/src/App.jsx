@@ -13,6 +13,7 @@ import Signup from "./components/Signup.jsx";
 import  Home from "./pages/Home.jsx";
 import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
+import Order from "./pages/Order.jsx";
 import MyOreders from "./pages/MyOrders.jsx";
 import Verify from "./pages/Verify.jsx";
 import ShopContextProvider from "./context/ShopContext.jsx";
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/product" element={<Product/>} />
         <Route path="/cart" element={<Cart/>} />
+       <Route path="/order" element={<Order />} />
 
         <Route path="/myorders" element={<MyOreders/>} />
 
