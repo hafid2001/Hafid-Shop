@@ -2,10 +2,12 @@ import { useState, useContext } from "react";
 import { categories, all_products } from "../assets/data";
 import { ShoppingBag } from "lucide-react";
 import { ShopContext } from "../context/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { addToCart } = useContext(ShopContext);
+  const navigate = useNavigate();
 
   const filteredProducts =
     selectedCategory === "All"
@@ -54,7 +56,7 @@ const Categories = () => {
               key={product._id}
               className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl overflow-hidden shadow-2xl hover:scale-105 hover:shadow-cyan-400/30 transition-all duration-500"
             >
-              <div className="relative w-full h-64 flex items-center justify-center bg-gradient-to-b from-purple-800/40 to-transparent">
+              <div onClick={() => navigate(`product/${product._id}`)} className="relative w-full h-64 flex items-center justify-center bg-gradient-to-b from-purple-800/40 to-transparent">
                 <img
                   src={product.image}
                   className="object-contain w-56 h-56 hover:scale-105 transition-transform duration-500"
