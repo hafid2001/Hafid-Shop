@@ -28,34 +28,50 @@ const Verify = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-900 via-purple-900 to-indigo-900 text-white px-6">
       <div className="text-center flex flex-col items-center">
         {status === "loading" && (
-          <>
-            <Loader2 className="w-16 h-16 animate-spin mb-4" />
+          <div className="flex flex-col items-center animate-pulse">
+            <Loader2 className="w-20 h-20 animate-spin" />
 
             <h2 className="text-2xl font-semibold">
-              Verifying your payment...
+              ·.· جاري التحقق من عملية الدفع
             </h2>
-          </>
+
+            <p className="text-gray-300 mt-2">
+              2 يرجى الانتظار قليلا
+            </p>
+          </div>
         )}
 
         {status === "success" && (
-          <>
-            <CheckCircle className="w-16 h-16 text-green-400 mb-4" />
+          <div className="flex flex-col items-center animate-pulse">
+            <CheckCircle className="w-20 h-20 text-green-400" />
 
             <h2 className="text-2xl font-semibold">
-              Payment Successful!
+              ·.· Payment Successful!
             </h2>
-          </>
+
+            <p className="text-gray-300 mt-2">
+              2 يرجى الانتظار قليلا
+            </p>
+          </div>
         )}
 
-        {status === "failed" && (
-          <>
-            <XCircle className="w-16 h-16 text-red-400 mb-4" />
+        {status === "error" && (
+          <div className="flex flex-col items-center animate-pulse">
+            <XCircle className="w-20 h-20 text-red-400" />
 
             <h2 className="text-2xl font-semibold">
-              Payment Failed
+              ·.· Payment Failed
             </h2>
-          </>
+
+            <p className="text-gray-300 mt-2">
+              2 يرجى الانتظار قليلا
+            </p>
+          </div>
         )}
+
+      
+
+       
       </div>
     </section>
   );
