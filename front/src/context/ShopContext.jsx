@@ -22,10 +22,10 @@ useEffect(()=>{
 
 },[cartItems])
 
-const addToCart = (id) => {
+const addToCart = (id,quantity) => {
     setCartItems((prev)=>({
         ...prev,
-        [id]:prev[id]? prev[id] +1 : 1
+        [id]:prev[id]? prev[id] + quantity : quantity
     }))
 
 };

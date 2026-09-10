@@ -102,7 +102,7 @@ return (
   <p className="mt-6 text-center text-gray-300">
     ليس لديك حساب؟{" "}
     <span
-      onClick={() => navigate("signup")}
+      onClick={() => navigate("/signup")}
       className="text-cyan-400 font-semibold cursor-pointer hover:underline"
       
     >
